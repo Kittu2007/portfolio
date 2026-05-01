@@ -26,8 +26,8 @@
   --orange: #f0904d;
   --orange-dim: rgba(240,144,77,0.09);
   --text: #edeae3;
-  --text2: #78756d;
-  --text3: #383632;
+  --text2: #a3a096; /* Brightened for better readability */
+  --text3: #75726a; /* Brightened for better readability */
   --serif: 'Instrument Serif', Georgia, serif;
   --sans: 'Syne', sans-serif;
   --body: 'DM Sans', sans-serif;
@@ -95,7 +95,7 @@ nav.stuck {
   min-height: 100vh;
   display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
   padding: 9rem 2rem 5rem;
-  position: relative; overflow: hidden;
+  position: relative; overflow: hidden; width: 100%;
 }
 
 .hero-grid {
@@ -129,7 +129,7 @@ nav.stuck {
 
 .hero-h {
   position: relative; z-index: 1;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1.1rem; width: 100%;
   opacity: 0; animation: fadeUp .7s .28s ease forwards;
 }
 .hero-h .l1 {
@@ -562,13 +562,13 @@ footer {
   .mobile-menu { display: flex; }
 
   /* hero */
-  .hero { padding: 7.5rem 1.25rem 4rem; min-height: 100svh; }
+  .hero { padding: 7rem 1rem 4rem; min-height: 100svh; width: 100%; overflow: hidden; }
   .hero-badge { font-size: .6rem; padding: .32rem .85rem; margin-bottom: 1.5rem; }
-  .hero-h { margin-bottom: 1rem; }
-  .hero-h .l1 { font-size: clamp(2.4rem,11vw,3.8rem); letter-spacing: -.03em; }
-  .hero-h .l2 { font-size: clamp(2.1rem,10.5vw,3.5rem); }
-  .hero-h .l3 { font-size: clamp(2.4rem,11vw,3.8rem); }
-  .hero-sub { font-size: .9rem; max-width: 100%; margin-bottom: 2rem; }
+  .hero-h { margin-bottom: 1rem; width: 100%; }
+  .hero-h .l1 { font-size: clamp(1.9rem, 9vw, 3.8rem); letter-spacing: -.03em; word-break: break-word; }
+  .hero-h .l2 { font-size: clamp(1.7rem, 8.5vw, 3.5rem); }
+  .hero-h .l3 { font-size: clamp(1.9rem, 9vw, 3.8rem); word-break: break-word; }
+  .hero-sub { font-size: .95rem; max-width: 100%; margin-bottom: 2rem; padding: 0 0.5rem; }
   .hero-btns { flex-direction: column; align-items: center; gap: .7rem; margin-bottom: 2.5rem; }
   .btn-p, .btn-o { width: 100%; max-width: 280px; justify-content: center; padding: .82rem 1.5rem; font-size: .88rem; }
   .hero-scroll { display: none; }
@@ -677,8 +677,8 @@ footer {
 
 /* ── Very small: ≤380px ── */
 @media (max-width: 380px) {
-  .hero-h .l1, .hero-h .l3 { font-size: clamp(2rem,10.5vw,2.8rem); }
-  .hero-h .l2 { font-size: clamp(1.8rem,10vw,2.6rem); }
+  .hero-h .l1, .hero-h .l3 { font-size: clamp(1.6rem, 8.5vw, 2.5rem); }
+  .hero-h .l2 { font-size: clamp(1.4rem, 8vw, 2.3rem); }
   .stats-row { grid-template-columns: 1fr; }
   .bento-mini { grid-template-columns: 1fr; }
   .c-lbl { max-width: 180px; }
@@ -736,7 +736,7 @@ footer {
   </div>
 
   <p class="hero-sub">
-    AI Student from Hyderabad — I build things that <strong>actually work</strong>: 
+    AI Student from Karnataka — I build things that <strong>actually work</strong>: 
     automation systems, AI tools, WordPress solutions and frontends that solve real problems.
   </p>
 
@@ -825,7 +825,7 @@ footer {
             <div class="id-row">
               <div class="id-icon">📍</div>
               <span class="id-lbl">Location</span>
-              <span class="id-val">Hyderabad, India</span>
+              <span class="id-val">Karnataka, India</span>
             </div>
             <div class="id-row">
               <div class="id-icon">🔧</div>
