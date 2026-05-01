@@ -227,12 +227,12 @@ nav.stuck {
 }
 .t-sep { width: 3px; height: 3px; background: var(--accent); border-radius: 50%; opacity: .5; }
 
-@keyframes fadeUp { from { opacity: 0; transform: translateY(24px) scale(0.98); filter: blur(4px); } to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* ── SCROLL REVEAL (Cinematic) ── */
-.reveal { opacity: 0; transform: translateY(30px) scale(0.98); filter: blur(5px); transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1); }
-.reveal.vis { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+/* ── SCROLL REVEAL (Safe for all devices) ── */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); will-change: opacity, transform; }
+.reveal.vis { opacity: 1; transform: translateY(0); }
 .d1 { transition-delay: .08s; }
 .d2 { transition-delay: .16s; }
 .d3 { transition-delay: .24s; }
@@ -738,7 +738,7 @@ footer {
   </div>
 
   <p class="hero-sub">
-    AI Student from Karnataka — I build things that <strong>actually work</strong>: 
+    AI Student from Hyderabad — I build things that <strong>actually work</strong>: 
     automation systems, AI tools, WordPress solutions and frontends that solve real problems.
   </p>
 
@@ -828,7 +828,7 @@ footer {
               <div class="id-row">
                 <div class="id-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
                 <span class="id-lbl">Location</span>
-                <span class="id-val">Karnataka, India</span>
+                <span class="id-val">Hyderabad, India</span>
               </div>
               <div class="id-row">
                 <div class="id-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
@@ -1080,7 +1080,7 @@ footer {
         You still need <strong>taste, iteration, and judgment.</strong> 
         Same tools. Different thinking."
       </p>
-      <span class="stmt-attr">— Dhanush V · Build in Public · Karnataka, India</span>
+      <span class="stmt-attr">— Dhanush V · Build in Public · Hyderabad, India</span>
     </div>
   </div>
 </div>
@@ -1191,7 +1191,7 @@ footer {
 
 <footer>
   <span class="foot-l">© 2026 <span class="fa">Dhanush V</span> · Built with intention.</span>
-  <span class="foot-r">AI Student · Karnataka, India <span class="fa">✦</span></span>
+  <span class="foot-r">AI Student · Hyderabad, India <span class="fa">✦</span></span>
 </footer>
 
 <script>
@@ -1254,7 +1254,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// SCROLL REVEAL (Cinematic)
+// SCROLL REVEAL (Safe configuration)
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { 
     if (e.isIntersecting) {
@@ -1262,7 +1262,7 @@ const obs = new IntersectionObserver(entries => {
       obs.unobserve(e.target); // Only animate once
     }
   });
-}, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0, rootMargin: '0px 0px -20px 0px' });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 // COUNTER ANIMATION
@@ -1297,7 +1297,7 @@ document.addEventListener('mousemove', e => {
 
 // ADVANCED 3D TILT EFFECT WITH GLARE
 document.querySelectorAll('.3d-hover').forEach(el => {
-  // Inject glare HTML into cards
+  // Inject glare HTML into cards safely
   const glareWrapper = document.createElement('div');
   glareWrapper.className = 'glare-wrapper';
   const glareInner = document.createElement('div');
